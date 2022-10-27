@@ -1,4 +1,7 @@
 
+from typing_extensions import LiteralString
+
+
 def sum(a,b):
     return print(f"{a} + {b} = {a + b}")
 
@@ -65,13 +68,16 @@ def multiples_five_list(list):
         if n % 5 == 0:
             print(f"{n}")
             
-def substr_count(ss,str):
+def substr_count(ss, str: LiteralString):
     ''' return number of times substring appears in given string'''
     # using find(), look for "Austin" (starting index)
     count = 0
+    ret_str = ""
     done = True
     while not done:
-        str.find(ss)
+        i = str.find(ss)
+        ret_str = str[i:i+5]
+        
     
     
     
@@ -81,7 +87,7 @@ if __name__=="__main__":
     # 7
     str_x = "Austin plays FFXIV. Very cool, Austin is. Aus tin is da best. Heh."
     ss = "Austin"
-    
+
     
     # 6, done
     # my_list = [10,5,60,65,35,24,78,15,9,8]
