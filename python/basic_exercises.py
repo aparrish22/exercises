@@ -1,5 +1,8 @@
 
 
+from typing import LiteralString
+
+
 def sum(a,b):
     return print(f"{a} + {b} = {a + b}")
 
@@ -65,77 +68,91 @@ def multiples_five_list(list):
     for n in list:
         if n % 5 == 0:
             print(f"{n}")
-            
-# def substr_count(ss, str: LiteralString):
-    ''' return number of times substring appears in given string'''
-    # using find(), look for string (starting index)
-    
-    # count = 0
-    # ret_str = ""
-    # length_str = len(str)
-    # done = False
-    # while not done:
-    #     i = str.find(ss)
-    #     if i >= 0:
-    #         ret_str = str[i:length_str]
-    #         count += 1
-    #     elif i < 0:
-    # pass        
-
+ 
 def print_pattern(n):
     for num in range(1, n + 1):
         for i in range(num):
             print(num, end=" ")
         print()
         
+def check_palin(str):
+    rev_str = str[::-1]
+    if str == rev_str:
+        print("Yes. given string is palindrome number")
+    else:
+        print("No. given string is not palindrome number")
+    return
         
-    
-    
+def odd_even_list(l1, l2):
+    new_list = []
+    for n in l1:
+        if n % 2 != 0:
+            new_list.append(n)
+    for n in l2:
+        if n % 2 == 0:
+            new_list.append(n)
+    return new_list
+        
+def odd_even_listc(l1, l2):
+    new_list = []
+    new_list.append([ n for n in l1 if n % 2 != 0])
+    new_list.append([ n for n in l2 if n % 2 == 0])
+    return new_list
     
 
-# 5 exercises daily
 if __name__=="__main__":
-    # 9
-    pass
+    # 10, done
+    # Given a two list of numbers, write a program to create a new list
+    # such that the new list should contain odd numbers from the first list
+    # and even numbers from the second list
+    list_1 = [10, 20, 25, 30, 35]
+    list_2 = [40, 45, 60, 75, 90]
+    print(odd_even_list(list_1, list_2))
+    print(odd_even_listc(list_1, list_2))
+    
+    # 9, done
+    str = input("Enter str to see if it's a palindrome: ")
+    check_palin(str)
     
     # 8, done
-    # n = int(input("Enter n numbers: "))
-    # print_pattern(n)
+    n = int(input("Enter n numbers: "))
+    print_pattern(n)
     
-    # 7, TODO 
-    # str_x = "Austin plays FFXIV. Very cool, Austin is. Aus tin is da best. Heh."
-    # ss = "Austin"
-    # print(substr_count(ss,str_x))
+    # 7, done
+    str_x = "Austin plays FFXIV. Very cool, Austin is. Aus tin is da best. Heh. Austin . Hey Austin"
+    ss = "Austin"
+    print(str_x.count(ss))
     
     # 6, done
-    # my_list = [10,5,60,65,35,24,78,15,9,8]
-    # multiples_five_list(my_list)
+    my_list = [10,5,60,65,35,24,78,15,9,8]
+    multiples_five_list(my_list)
 
     # 5, done
-    # list = [4,10,8,5,4]
-    # result = first_and_last(list)
-    # print(result)
+    list = [4,10,8,5,4]
+    result = first_and_last(list)
+    print(result)
     
     # 4 done
-    # remove_chars("Warlock",3)
+    remove_chars("Warlock",3)
     
     
     # 3, done
-    # str = input("Enter a string: ")
-    # even_str(str)
+    str = input("Enter a string: ")
+    even_str(str)
     
     # 2, done
-    # try:
-    #     result = int(input("Enter length to sum current and previous number: "))
-    # except ValueError:
-    #     print("Must be Integer")
-    #     exit()
-    # print_curr_prev(result)
+    try:
+        result = int(input("Enter length to sum current and previous number: "))
+    except ValueError:
+        print("Must be Integer")
+        exit()
+    print_curr_prev(result)
     
-    # Finished 1
-    # sum(6,9)
-    # sum_user_input()
-    # multiply(6,9)
-    # mult_user_input()
+    # 1, done
+    sum(6,9)
+    sum_user_input()
+    multiply(6,9)
+    mult_user_input()
     
     
+    exit()
